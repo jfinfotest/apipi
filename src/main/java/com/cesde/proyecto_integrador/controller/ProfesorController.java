@@ -1,5 +1,6 @@
 package com.cesde.proyecto_integrador.controller;
 
+import com.cesde.proyecto_integrador.model.Grupo;
 import com.cesde.proyecto_integrador.model.Profesor;
 import com.cesde.proyecto_integrador.service.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,10 @@ public class ProfesorController {
     public ResponseEntity<Void> deleteProfesor(@PathVariable Long id) {
         profesorService.deleteProfesor(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}/grupos")
+    public ResponseEntity<List<Grupo>> getGruposByProfesorId(@PathVariable Long id) {
+        return ResponseEntity.ok(profesorService.getGruposByProfesorId(id));
     }
 }
