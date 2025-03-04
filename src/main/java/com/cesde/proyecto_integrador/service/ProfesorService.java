@@ -2,6 +2,7 @@ package com.cesde.proyecto_integrador.service;
 
 import java.util.List;
 
+import com.cesde.proyecto_integrador.model.Grupo;
 import com.cesde.proyecto_integrador.model.Profesor;
 
 public interface ProfesorService {
@@ -14,4 +15,6 @@ public interface ProfesorService {
     Profesor updateProfesor(Long id, Profesor profesor);
 
     void deleteProfesor(Long id);
+
+    List<Grupo> getGruposByProfesorId(Long id);
 }
